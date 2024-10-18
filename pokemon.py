@@ -14,22 +14,17 @@ class Pokemon :
     
     def atacar(self,pokemon):
         print("{} atacou {}".format(self, pokemon))
+
+class pokemon_eletrico(Pokemon):
+    def atacar(self, pokemon):
+        print("{} lançou um raio do trovão em {}".format(self, pokemon))
+    def dar_choque(self, pokemon):
+        print("{} Deu choque em {}".format(self, pokemon))
         
         
+meu_pokemon = pokemon_eletrico("eletrico", "Pikachu")
+pokemon_amigo = Pokemon("fogo", "charmander")
 
-        
-
-meu_pokemon = Pokemon("fogo", "charmander", nome="tunico")
-
-pokemon_meu_amigo = Pokemon("eletrico", "pikachu")
-
-meu_pokemon.atacar(pokemon_meu_amigo)
-
-pokemon_meu_amigo.atacar(meu_pokemon)
-
-#print(meu_pokemon)
-#print(pokemon_meu_amigo)
-
-print(meu_pokemon)
-print(pokemon_meu_amigo)
+meu_pokemon.dar_choque(pokemon_amigo)
+pokemon_amigo.atacar(meu_pokemon)
 
