@@ -38,11 +38,4 @@ class pokemon_Agua(Pokemon):
         
         
         
-meu_pokemon = pokemon_Fogo("charmander")
-pokemon_amigo = pokemon_Eletrico("Pikachu")
 
-print(meu_pokemon, meu_pokemon.tipo)
-print(pokemon_amigo, pokemon_amigo.tipo)
-
-meu_pokemon.atacar(pokemon_amigo)
-pokemon_amigo.atacar(meu_pokemon)

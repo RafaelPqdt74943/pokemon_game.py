@@ -13,21 +13,32 @@ class pessoa:
         return self.nome
     
     def mostrar_pokemons (self):
-        for pokemon in self.pokemons:
-            print(pokemon)
+        if self.pokemons:
+            print("pokemons de {}: ".format(self))   
+            for pokemon in self.pokemons:
+                print(pokemon)
+        else : 
+            print("{} não tem nenhum pokemon".format(self))
             
             
 class Player (pessoa):
     tipo = "Player"
     
+    def capturar (self, pokemon):
+        self.pokemons.append(pokemon)
+        print("{} capturou um {}!!".format(self,pokemon))
+        
+    
 class inimigo (pessoa):
     tipo = "Inimigo"
     
     
-meu_pokemon = pokemon_Eletrico("pikachu")
-meu_pokemon2 = pokemon_Fogo("charmander")
+eu= Player("rafael")
+pokemon_selvagem = pokemon_Fogo("charmander")
 
-eu = Player(nome ="rafael", pokemons=[meu_pokemon,meu_pokemon2])
+print("antes de capturar")
+eu.mostrar_pokemons()
 
-print(eu)
+eu.capturar(pokemon_selvagem)
+
 eu.mostrar_pokemons()
