@@ -5,6 +5,18 @@ from pokemon import *
 NOMES = ["Rafael","Gary", "Ash", "doctor Who", "SuperMan", "Homen-aranha", "Charlie", "Boris", " Floresvaldo", "Arthur"
          , "Lancelot", "Matheus", "Nemias"]
 
+POKEMONS = [
+    pokemon_Fogo("Charmander"),
+    pokemon_Fogo("Charmeleon"),
+    pokemon_Fogo("Arcanine"), 
+    pokemon_Fogo("Flarion"),
+    pokemon_Eletrico("Pikachu"),
+    pokemon_Eletrico("Raichu"),
+    pokemon_Agua("squirtle"),
+    pokemon_Agua("magicarp"),
+    pokemon_Agua("Gyarados")
+]
+
 class pessoa:
     def __init__ (self,nome = None, pokemons=[]):
         if nome :
@@ -36,19 +48,17 @@ class Player (pessoa):
     
 class inimigo (pessoa):
     tipo = "Inimigo"
-    
-'''    
-eu= Player("rafael")
-pokemon_selvagem = pokemon_Fogo("charmander")
 
-print("antes de capturar")
-eu.mostrar_pokemons()
+    def __init__(self, nome=None, pokemons = []):
+       if not pokemons :
+           for i in range(random.randint(1,6)):
+              pokemons.append(random.choice(POKEMONS))
 
-eu.capturar(pokemon_selvagem)
+       super().__init__(nome = nome, pokemons= pokemons)
 
-eu.mostrar_pokemons()
 
-'''
 
-eu = Player()
-print(eu)
+meu_inimigo=inimigo()
+print(meu_inimigo)
+meu_inimigo.mostrar_pokemons()
+        
