@@ -2,6 +2,7 @@ import random
 
 from pokemon import *
 
+
 NOMES = ["Rafael","Gary", "Ash", "doctor Who", "SuperMan", "Homen-aranha", "Charlie", "Boris", " Floresvaldo", "Arthur"
          , "Lancelot", "Matheus", "Nemias"]
 
@@ -57,8 +58,3 @@ class inimigo (pessoa):
        super().__init__(nome = nome, pokemons= pokemons)
 
 
-
-meu_inimigo=inimigo()
-print(meu_inimigo)
-meu_inimigo.mostrar_pokemons()
-        
