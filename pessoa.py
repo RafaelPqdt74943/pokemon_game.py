@@ -96,12 +96,30 @@ class Player (pessoa):
                 try:
                     Escolha = int(Escolha)
                     pokemon_escolhido = self.pokemons[Escolha] 
-                    print("{} eu escolho você!!!!".format(pokemon_escolhido))
-                    return pokemon_escolhido
+                    print("{} eu escolho você!!!!".format(pokemon_escolhido))                    
                 except:
                     print("escolha invalida")   
         else:
             print("ERRO:esse jogador não possui nenhum pokemon para ser escolhido")
+
+    def explorar (self) : 
+        if random.random() <= 0.3 :
+            pokemon = random.choice(POKEMONS)
+            print("Um pokemon selvagem apareceu {}".format(pokemon))
+            escolha= input("deseja capturar o pokemon s/n?")
+            if escolha == "s" :
+                if random.random() >= 0.5 :
+                    self.capturar(pokemon)
+                else:
+                    print(" {} fugiu, qu pena!!!!!".format(pokemon))
+                
+            else : 
+                print(" Ok, boa viajem")
+        else:
+            print("essa exploração não deu em nada")
+            return None
+
+
         
     
 class inimigo (pessoa):
