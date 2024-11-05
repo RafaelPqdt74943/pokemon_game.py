@@ -28,14 +28,50 @@ def escolher_pokemon_inicial (player):
         else:
             print("Escolha invalida!!")
             
-player = Player("Rafael")
-player.mostra_dinheiro()
-player.capturar(pokemon_Fogo("Charmander", level=1))
 
-#inimigo1= inimigo("gary", pokemons=[pokemon_Agua("Squirtle", level=1)])
 
-#player.batalhar(inimigo1)
 
-player.explorar()
+if __name__ == "__main__":
+    
+    print("_____________________________________")
+    print("Bem vindo ao pokemon RPG de terminal")
+    nome=input("qual o seu nome? ")
+    player = Player(nome)
+    print("Ola {} esse é um número habitado por pokemons, a partir de agora sua missão é se tornar um mestre dos pokemons, capture o máximo de pokemonos que conseguir e lute com seus inimigos".format(player))
+    player.mostra_dinheiro()
+    if player.pokemons :
+        print("já vi que você possui alguns pokemons")
+        player.mostrar_pokemons()
+    else:
+        print("você não tem nenhum pokemon, portanto precis escolher um")
+        escolher_pokemon_inicial(player)
+        
+print(" pronto agora que você já possui um pokemon, enfrente seu rival desde da infanâcia")
 
-player.mostrar_pokemons()
+gary= inimigo("Gary", pokemons=[ pokemon_Agua("Squirtle", level=1)])
+player.batalhar(gary)
+    
+        
+while True :
+    print("_________________________")
+    print(" o que deseja fazer ?")
+    print(" 1-explorar pelo mundão a fora ?")
+    print(" 2-lutar com inimigo ?")
+    print(" 0-sair do jogo ?")
+    escolha = int(input("Sua escolha : "))
+    
+    if escolha == 0 : 
+        print("fechando o jogo")
+        break 
+    elif escolha == 1 :
+        player.explorar()
+    elif escolha == 2 : 
+        inimigo_aleatorio = inimigo()
+        player.batalhar(inimigo_aleatorio)
+    else:
+        print("escolha invalida!!!!")
+    
+    
+    
+    
+    

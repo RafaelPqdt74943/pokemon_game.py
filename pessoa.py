@@ -68,7 +68,7 @@ class pessoa:
             while True:
                 vitoria=pokemon.atacar(pokemon_inimigo)
                 if vitoria:
-                    print("{} ganhou a batalha".format(pessoa))
+                    print("{} ganhou a batalha".format(self))
                     self.ganhar_dinheiro(pokemon_inimigo.level * 100)
                     break
                 vitoria_inimiga=pokemon_inimigo.atacar(pokemon)
@@ -96,7 +96,8 @@ class Player (pessoa):
                 try:
                     Escolha = int(Escolha)
                     pokemon_escolhido = self.pokemons[Escolha] 
-                    print("{} eu escolho você!!!!".format(pokemon_escolhido))                    
+                    print("{} eu escolho você!!!!".format(pokemon_escolhido))  
+                    return pokemon_escolhido                  
                 except:
                     print("escolha invalida")   
         else:
